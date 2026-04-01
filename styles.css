@@ -368,6 +368,13 @@ body {
   padding: 5px 12px;
   border-radius: 99px;
   border: 1px solid rgba(108,71,255,0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.skill-tag i {
+  font-size: 1rem;
+  line-height: 1;
 }
 
 /* ---- Projects ---- */
