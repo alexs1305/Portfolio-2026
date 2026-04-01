@@ -205,6 +205,10 @@ body {
   box-shadow: 0 20px 60px rgba(108,71,255,0.35);
   position: relative;
 }
+.hero-avatar-img {
+  object-fit: cover;
+  object-position: center top;
+}
 .hero-avatar::after {
   content: '☕';
   position: absolute;
