@@ -441,7 +441,11 @@ body {
   padding: 4px 10px;
   border-radius: 99px;
   border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
+.project-tag i { font-size: 0.95rem; line-height: 1; }
 
 /* ---- Project links ---- */
 .project-links {
@@ -598,7 +602,11 @@ body {
   padding: 6px 14px;
   border-radius: 99px;
   border: 1px solid rgba(108,71,255,0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
+.expertise-tag i { font-size: 0.95rem; line-height: 1; }
 
 /* ---- Experience ---- */
 .experience-list {
