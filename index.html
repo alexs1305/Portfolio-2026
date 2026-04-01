@@ -538,5 +538,47 @@
   </footer>
 
   <script src="app.js"></script>
+<script>
+  (function () {
+    // Normalise chip text: strip emojis, devicon elements, extra whitespace, lowercase
+    function chipKey(el) {
+      const clone = el.cloneNode(true);
+      clone.querySelectorAll('i').forEach(i => i.remove());
+      return clone.textContent.replace(/[\u{1F300}-\u{1FAFF}]|[\u{2600}-\u{27BF}]/gu, '').trim().toLowerCase();
+    }
+
+    let activeKey = null;
+
+    function initChips() {
+      const chips = document.querySelectorAll('.skill-tag, .project-tag, .expertise-tag');
+      chips.forEach(chip => {
+        chip.style.cursor = 'pointer';
+        chip.addEventListener('click', function () {
+          const key = chipKey(this);
+          if (activeKey === key) {
+            // Deselect
+            activeKey = null;
+            chips.forEach(c => {
+              c.classList.remove('chip-active', 'chip-dimmed');
+            });
+          } else {
+            activeKey = key;
+            chips.forEach(c => {
+              const match = chipKey(c) === key;
+              c.classList.toggle('chip-active', match);
+              c.classList.toggle('chip-dimmed', !match);
+            });
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initChips);
+    } else {
+      initChips();
+    }
+  })();
+</script>
 </body>
 </html>

@@ -467,6 +467,29 @@ body {
   color: #fff;
 }
 
+/* ---- Chip selection states ---- */
+.skill-tag.chip-active,
+.project-tag.chip-active,
+.expertise-tag.chip-active {
+  background: var(--accent) !important;
+  color: #fff !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 2px 12px rgba(108,71,255,0.35);
+  transform: scale(1.06);
+  transition: all 0.15s ease;
+}
+.skill-tag.chip-active i,
+.project-tag.chip-active i,
+.expertise-tag.chip-active i {
+  filter: brightness(10);
+}
+.skill-tag.chip-dimmed,
+.project-tag.chip-dimmed,
+.expertise-tag.chip-dimmed {
+  opacity: 0.3;
+  transition: opacity 0.15s ease;
+}
+
 /* ---- Contact ---- */
 .contact-grid {
   display: grid;
