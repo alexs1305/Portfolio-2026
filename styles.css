@@ -206,8 +206,7 @@ body {
   position: relative;
 }
 .hero-avatar-img {
-  object-fit: cover;
-  object-position: center top;
+  object-fit: scale-down;
 }
 .hero-avatar::after {
   content: '☕';
